@@ -106,12 +106,12 @@
 
     <Button
         android:id="@+id/btsend"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:onClick="sendPregunta"
         app:icon="@drawable/enviar"
         app:iconTint="#3E5AF3"
-        style="@style/Widget.MaterialComponents.Button.OutlinedButton.Icon"
         app:layout_constraintBottom_toTopOf="@+id/txtEstado"
         app:layout_constraintEnd_toStartOf="@+id/btrecord"
         app:layout_constraintTop_toBottomOf="@+id/rcLista" />

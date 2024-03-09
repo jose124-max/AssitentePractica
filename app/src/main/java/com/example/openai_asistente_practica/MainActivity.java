@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
     TextView txtPregunta;
     TextView txtChat;
     String lastMessageID;
-    String TokenOpenAI ="-----";
+    String TokenOpenAI ="token-here";
 
     String run_ID;
     Handler handler;
@@ -87,18 +87,17 @@ public class MainActivity extends AppCompatActivity {
         return headers;
     }
     public void sendPregunta(View v){
-    String texto = txtPregunta.getText().toString();
-    if(!texto.equals("")){
-        txtChat.setText(txtChat.getText().toString() + "\n\n" + texto);
-        txtPregunta.setText("");
-        btsend.setEnabled(false);
-        createMessage(texto);
+        String texto = txtPregunta.getText().toString();
+        if(!texto.equals("")){
+            txtChat.setText(txtChat.getText().toString() + "\n\n" + texto);
+            txtPregunta.setText("");
+            btsend.setEnabled(false);
+            createMessage(texto);
+        }
+
     }
-    
-}
     private void createMessage(String msg) {
-    StringRequest stringRequest = new StringRequest(Request.Method.POST,
-            Global.getUrlCreateMessage(ThreadID),
+        StringRequest stringRequest = new StringRequest(Request.Method.POST, Global.getUrlCreateMessage(ThreadID),
             new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
